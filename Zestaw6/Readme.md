@@ -1,3 +1,3 @@
 ﻿# Python2020
  
- ## Zestaw5
+ ## Zestaw6
