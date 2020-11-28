@@ -24,12 +24,12 @@ class TestPoint(unittest.TestCase):
         self.assertEqual(self.P_min1min3.x, -1)
 
     def test__str__(self):
-        self.assertEqual(self.P_min1min3.__str__(), '(-1, -3)')
-        self.assertEqual(self.P_35.__str__(), '(3, 5)')
+        self.assertEqual(str(self.P_min1min3), '(-1, -3)')
+        self.assertEqual(str(self.P_35), '(3, 5)')
 
     def test__repr__(self):
-        self.assertEqual("Point"+self.P_min1min3.__str__(), 'Point(-1, -3)')
-        self.assertEqual("Point"+self.P_35.__str__(), 'Point(3, 5)')
+        self.assertEqual("Point"+repr(self.P_min1min3), 'Point(-1, -3)')
+        self.assertEqual("Point"+repr(self.P_35), 'Point(3, 5)')
 
     def test__eq__(self):
         self.assertTrue(self.P_11 == self.P_11copy)
