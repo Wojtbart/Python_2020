@@ -1,13 +1,13 @@
 import math
 
 
-def heron(a: int, b: int, c: int):
+def heron(a, b, c):
     """Obliczanie pola powierzchni trójkąta za pomocą wzoru
     Herona. Długości boków trójkąta wynoszą a, b, c."""
     if a+b <= c or b+c <= a or a+c <= b:
         raise ValueError("Podaj długosci boków tak aby utowrzyć trójkąt!!!")
     p = (a+b+c)/2.0
-    pole = round(math.sqrt(p*(p-a)*(p-b)*(p-c)), 2)
+    pole = math.sqrt(p*(p-a)*(p-b)*(p-c))
     return pole
 
 
