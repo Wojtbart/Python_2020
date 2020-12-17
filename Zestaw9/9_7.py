@@ -13,7 +13,7 @@ class Node:
 def bst_max(top):  # znajduje najwiekszy element w drzewie, czyli kierujemy się w prawą stronę
     if top is None:
         return ValueError("Drzewo  jest puste!!!!")
-    while top.right != None:
+    while top.right is not None:
         top = top.right
     return top
 
@@ -21,7 +21,7 @@ def bst_max(top):  # znajduje najwiekszy element w drzewie, czyli kierujemy się
 def bst_min(top):  # znajduje najmniejszy element w drzewie, czyli kierujemy się w  lewą stronę
     if top is None:
         return ValueError("Drzewo  jest puste!!!!")
-    while top.left != None:
+    while top.left is not None:
         top = top.left
     return top
 
