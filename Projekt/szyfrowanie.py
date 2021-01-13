@@ -80,7 +80,7 @@ def generateKeyPair(p, q):
     else:
         d = x
 
-    # zwraca np. publiczny klucz(e=39,n=391) oraz prywatny klucz(d=27,n=291)
+    # zwraca np. publiczny klucz(e=39,n=391) oraz prywatny klucz(d=27,n=391)
     return((e, n), (d, n))
 
 
@@ -96,9 +96,9 @@ def encrypt(privateKey, text):
 
 
 # funkcja do deszyfrowania
-def decrypt(privateKey, text):
+def decrypt(publicKey, text):
     # rozbijamy klucz
-    key, n = privateKey
+    key, n = publicKey
     text = text
 
     # Generujemy tekst z klucza i zaszyforwanego tekstu a^b mod m
