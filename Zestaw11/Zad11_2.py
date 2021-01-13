@@ -20,7 +20,7 @@ def swap(L, left, right):
 
 def saveFile(L, filename):
     file = open(filename, 'w')
-    nrFile = filename[9]  # data/sort1.dat
+    nrFile = filename[9]  # data/sort1.dat -->1
     size = len(L)
     for i in range(0, size):
         file.write('{} {}\n'.format(str(i), str(L[i])))
@@ -60,6 +60,7 @@ def quicksort(L, left, right, filename):
 
 
 if __name__ == '__main__':
+
     number = 50
     L1 = createRandInt(number)
     L2 = createSomeRandIntSort(number)

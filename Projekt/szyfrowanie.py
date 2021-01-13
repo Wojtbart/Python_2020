@@ -2,7 +2,7 @@ import random
 import sys
 
 
-# algorytm euklidesa,zwraca nwd liczb a i b(https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)
+# algorytm euklidesa,zwraca nwd(najwiekszy wspólny dzielnik) liczb a i b(https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)
 def gcd(a, b):
     while b != 0:
         # a, b = b, a % b
@@ -43,6 +43,7 @@ def isPrime(number):
     return True
 
 
+# zwraca 2 losowe liczby pierwsze
 def drawPrimeNumber():
     L = []
     while len(L) != 2:
@@ -118,7 +119,7 @@ if __name__ == '__main__':
         q = drawPrimeNumber()[1]
     else:
         print("Niepoprawna opcja, zamykam program!")
-        sys.exit(0)
+        sys.exit(0)  # gdy zła to kończę program
     print("Generowanie pary kluczy . . .")
 
     public, private = generateKeyPair(p, q)
