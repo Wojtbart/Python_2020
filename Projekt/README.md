@@ -82,7 +82,7 @@ python3 szyfrowanie.py
 3.9.0
 
 ## Źródła 
-[Algorytm Euklidesa(postać podstawowa i rozszerzona)](https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)
+[Algorytm Euklidesa(postać podstawowa i rozszerzona)](https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)\
 [Algorytm RSA](https://pl.wikipedia.org/wiki/RSA_(kryptografia))
 
 ## Autor,data
