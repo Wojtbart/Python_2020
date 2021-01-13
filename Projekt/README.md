@@ -48,7 +48,7 @@ def isPrime(number)
 Funkcja sprawdzająca, czy liczba podana jako argument jest liczbą pierwszą, zwraca True lub False
 
 ```python
-def drawPrimeNumber()
+def drawPrimeNumber(number)
 ```
 Funkcja służąca do zwracania listy 2 pierwszych liczb losowych z zakresu od 2 do 1000, potrzeban do tego jeżeli nie chcemy sami wpisywać liczb pierwszych do utworzenia klucza publicznego i prywatnego
 

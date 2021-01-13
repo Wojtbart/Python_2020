@@ -81,7 +81,7 @@ def generateKeyPair(p, q):
         d = x
 
     # zwraca np. publiczny klucz(e=39,n=391) oraz prywatny klucz(d=27,n=391)
-    return((e, n), (d, n))
+    return ((e, n), (d, n))
 
 
 # funkcja do zaszyfrowania
@@ -91,6 +91,7 @@ def encrypt(privateKey, text):
 
     # konwertujemy każdą literę w tekście jako liczba Unicode używając a^b mod m()
     encrypted = [((ord(char) ** key) % n) for char in text]
+    # print(encrypted)
 
     return encrypted
 
@@ -105,6 +106,7 @@ def decrypt(publicKey, text):
     decrypted = [chr((char ** (key)) % n) for char in text]
 
     # dołączamy tekst po literze
+    # print("decrypted", decrypted)
     return ''.join(decrypted)
 
 

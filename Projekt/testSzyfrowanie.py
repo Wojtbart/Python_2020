@@ -38,17 +38,23 @@ class TestSszyfrowanie(unittest.TestCase):
         self.assertTrue(False if drawPrimeNumber()[
                         0] < 2 and drawPrimeNumber()[0] > 1000 else True)
 
-    # def test__generateKeyPair(self):
-    #     self.assertEqual(generateKeyPair(self.number3, self.number4),
-    #                      ((432027, 601723), (172563, 601723))) ???????????????
+    def test__generateKeyPair(self):
+        self.assertEqual(generateKeyPair(
+            self.number3, self.number4)[0][1], 601723)
+        self.assertEqual(generateKeyPair(
+            self.number3, self.number4)[1][1], 601723)
+        self.assertEqual(generateKeyPair(
+            self.number5, self.number6)[0][1], 34861)
+        self.assertEqual(generateKeyPair(
+            self.number5, self.number6)[1][1], 34861)
 
-    # def test__encrypt(self):
-    #     self.assertEqual(encrypt((68557, 601723), "tekst"),
-    #                      555660229530485995187204555660)
+    def test__encrypt(self):
+        self.assertEqual(encrypt((103771, 601723), "tekst"), [
+                         368385, 86968, 558744, 465854, 368385])
 
-    # def test__decrypt(self):
-    #     self.assertEqual(decrypt((23357, 601723), 49611814641126308209010496118),
-    #                      "tekst")
+    def test__decrypt(self):
+        self.assertEqual(decrypt((163731, 601723), [
+                         368385, 86968, 558744, 465854, 368385]), "tekst")
 
     def tearDown(self): pass
 
