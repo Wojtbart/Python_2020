@@ -2,8 +2,11 @@ import random
 import sys
 
 
-# algorytm euklidesa,zwraca nwd(najwiekszy wspólny dzielnik) liczb a i b(https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)
 def gcd(a, b):
+    '''
+    Algorytm euklidesa,zwraca nwd(najwiekszy wspólny dzielnik) liczb a i b(https://pl.wikipedia.org/wiki/Algorytm_Euklidesa) 
+    '''
+
     while b != 0:
         # a, b = b, a % b
         c = a % b
@@ -12,10 +15,12 @@ def gcd(a, b):
     return a
 
 
-# rozszerzony algorytm Euklidesa(https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)
-# zwraca nwd,wsp. przy największej liczbie, wsp. przy najmniejszej liczbie, np dla
-# nwd(174,18) zwraca 6,-1,10 --------> 6=(-1)*174+10*18
 def extGcd(a, b):
+    '''
+    Rozszerzony algorytm Euklidesa(https://pl.wikipedia.org/wiki/Algorytm_Euklidesa)
+    zwraca nwd,wsp. przy największej liczbie, wsp. przy najmniejszej liczbie, np dla
+    nwd(174,18) zwraca 6,-1,10 --------> 6=(-1)*174+10*18
+    '''
 
     x, y = 1, 0
     r, s = 0, 1
@@ -31,8 +36,8 @@ def extGcd(a, b):
     return a, x, y
 
 
-# do sprawdzenia czy liczba jest pierwsza(zwraca True lub False)
 def isPrime(number):
+    ''' Funkcja do sprawdzenia czy liczba jest pierwsza(zwraca True lub False) '''
     if number == 2:
         return True
     if number < 2 or number % 2 == 0:
@@ -43,8 +48,8 @@ def isPrime(number):
     return True
 
 
-# zwraca 2 losowe liczby pierwsze
 def drawPrimeNumber():
+    '''Funkcja zwracająca listę 2 losowych liczb pierwszych '''
     L = []
     while len(L) != 2:
         x = random.randint(2, 1000)
@@ -53,8 +58,9 @@ def drawPrimeNumber():
     return L
 
 
-# generowanie pary kluczy: publicznego i prywatnego
 def generateKeyPair(p, q):
+    '''Funkcja do generowania pary kluczy: publicznego i prywatnego dla 2 podanych na wejściu liczb pierwszych, zwraca tuple kluczy: publicznego i prywatnego '''
+
     # iloczyn liczb pierwszych
     n = p*q
 
@@ -84,8 +90,9 @@ def generateKeyPair(p, q):
     return ((e, n), (d, n))
 
 
-# funkcja do zaszyfrowania
 def encrypt(privateKey, text):
+    '''Funkcja słuząca do zaszyfrowania tekstu do postaci liczb, jako argumenty przyjmuje tekst oraz klucz prywatny, zwraca liste liczb jako zaszyfrowany tekst'''
+
     # rozbijamy klucz
     key, n = privateKey
 
@@ -96,14 +103,15 @@ def encrypt(privateKey, text):
     return encrypted
 
 
-# funkcja do deszyfrowania
-def decrypt(publicKey, text):
+def decrypt(publicKey, listOfNumbers):
+    '''Funkcja słuząca do deszyfrowania tekstu do postaci liter, jako argumenty przyjmuje licztę liczb oraz klucz publiczny, zwraca zaszyfrowany tekst'''
+
     # rozbijamy klucz
     key, n = publicKey
-    text = text
+    # text = text
 
-    # Generujemy tekst z klucza i zaszyforwanego tekstu a^b mod m
-    decrypted = [chr((char ** (key)) % n) for char in text]
+    # Generujemy tekst z klucza i zaszyforowanego tekstu a^b mod m
+    decrypted = [chr((char ** (key)) % n) for char in listOfNumbers]
 
     # dołączamy tekst po literze
     # print("decrypted", decrypted)
@@ -112,7 +120,7 @@ def decrypt(publicKey, text):
 
 if __name__ == '__main__':
 
-    choose = input('Czy chcesz sam wygenerować klucze publiczne(t lub n)')
+    choose = input('Czy chcesz sam stworzyć klucze(t lub n)')
     if (choose == 't'):
         p = int(input("Wpisz większą liczbę pierwszą (31,37,41,43 itd.):"))
         q = int(input("Wpisz inną liczbę pierwszą (jakiej jeszcze nie wpisałeś):"))

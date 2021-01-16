@@ -65,12 +65,12 @@ dodajemy phi w końcu zwracamy klucz publiczny i prywatny, np. publiczny klucz(e
 def encrypt(privateKey, text)
 ```
 Funkcja służąca zaszyfrowania tekstu, jako argumenty przyjmuje  klucz prywatny oraz tekst do zaszyfrowania, szyfrując używamy wzoru c≡e^m(mod n), gdzie 
-e=cyfra Unicode z każdej literki, m= klucz prywatny(liczba d), n=iloczyn liczb pierszych, zwracany zaszyfrowany tekst w postaci liczb
+e=cyfra Unicode z każdej literki, m= klucz prywatny(liczba d), n=iloczyn liczb pierszych, zwracany zaszyfrowany tekst w postaci listy liczb
 
 ```python
 def decrypt(privateKey, text)
 ```
-Funkcja służąca odszyfrowania tekstu, jako argumenty przyjmuje  klucz publiczny oraz tekst do odszyfrowania, odszyfrowując używamy wzoru m≡c^d(mod n), gdzie c=znak z każdej cyfry jako znak Unicode, d= klucz prywatny(liczba e), n=iloczyn liczb pierszych, zwracany odszyfrowany tekst w postaci jawnej
+Funkcja służąca odszyfrowania tekstu, jako argumenty przyjmuje  klucz publiczny oraz listę liczb, odszyfrowując używamy wzoru m≡c^d(mod n), gdzie c=znak z każdej cyfry jako znak Unicode, d= klucz prywatny(liczba e), n=iloczyn liczb pierszych, zwracany odszyfrowany tekst w postaci jawnej
 
 
 ## Uruchomienie
